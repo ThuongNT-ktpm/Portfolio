@@ -66,7 +66,7 @@
 }
 
 /* <!-- ================== Mobile ================== --> */
-@media (max-width: 620px) {
+@media (max-width: 767px) {
   .Laptop a {
     width: 200px;
   }
@@ -104,9 +104,12 @@
 
   .grid {
     grid-template-columns: 1fr;
+    display: block;
     justify-items: center;
     width: 350px;
-    margin: 0px -90px;
+    margin: 20px -140px;
+
+    gap: 20px;
   }
   /* .card {
     width: 200%;
