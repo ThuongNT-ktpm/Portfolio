@@ -1,0 +1,144 @@
+.mobile {
+  display: none;
+}
+/* <!-- ================== Table ================== --> */
+@media (max-width: 980px) {
+  header .hamburger {
+    display: flex;
+  }
+
+  .Laptop ul {
+    display: none;
+  }
+  .right {
+    display: flex;
+    gap: 30px;
+  }
+  .hamburger {
+    background-color: rgb(198, 126, 54);
+  }
+  .mobile {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 64px;
+    background: rgba(11, 15, 25, 0.96);
+    border-bottom: 1px solid var(--border);
+  }
+  .mobile a {
+    display: block;
+    padding: 14px 20px;
+    border-top: 1px solid var(--border);
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+  }
+  .mobile a:hover,
+  .socials a:hover {
+    color: red;
+  }
+  .mobile.open {
+    display: block;
+  }
+  .cta a:hover {
+    color: hotpink;
+  }
+  .hero1 {
+    flex-direction: column;
+    gap: 22px;
+    margin: 0 auto;
+    width: min(1100px, 92%);
+  }
+  .chu {
+    width: 100%;
+  }
+  .avata1 {
+    display: flex;
+    justify-content: center;
+  }
+  .avata1 img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+/* <!-- ================== Mobile ================== --> */
+@media (max-width: 620px) {
+  .Laptop a {
+    width: 200px;
+  }
+  .right {
+    display: flex;
+    gap: 30px;
+  }
+  .hamburger {
+    background-color: rgb(70, 72, 73);
+  }
+
+  .mobile a {
+    padding: 16px 22px;
+    text-decoration: none;
+  }
+
+  .title {
+    font-size: clamp(24px, 7vw, 40px);
+  }
+  .subtitle {
+    font-size: clamp(14px, 4.2vw, 18px);
+  }
+
+  .avata1 img {
+    margin-top: 30px;
+    width: 45%;
+    height: 200px;
+  }
+  .cta a {
+    text-decoration: none;
+  }
+  .section-head h2 {
+    margin-top: 0px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    width: 350px;
+    margin: 0px -90px;
+  }
+  /* .card {
+    width: 200%;
+    max-width: 360%;
+    margin: 0px;
+    margin-left: 100%;
+  }
+  .reveal {
+    width: 40%;
+    margin: 50px;
+  }
+  .tl-item h4,
+  .tl-item p {
+    width: 300px;
+    margin-left: 30%;
+  } */
+  /* <!-- ================== TIMELINE ================== --> */
+  .haia {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* <!-- ================== CONTACT ================== --> */
+  .CONTACT {
+    align-items: center;
+    width: 100%;
+
+    margin: 0;
+  }
+  .end {
+    font-size: 13px;
+    gap: 5px;
+  }
+}
