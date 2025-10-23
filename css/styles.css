@@ -46,7 +46,7 @@ body {
   margin: 0 auto;
 }
 
-/* ===== Header: clean & balanced ===== */
+/* Header */
 header {
   position: fixed;
   top: 0;
@@ -60,7 +60,7 @@ header {
   box-shadow: 0 6px 22px rgba(2, 8, 20, 0.45);
 }
 
-/* container inside header */
+
 header .Laptop {
   max-width: var(--container);
   margin: 0 auto;
@@ -72,7 +72,7 @@ header .Laptop {
   padding: 0 22px;
 }
 
-/* brand (left) */
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -84,7 +84,7 @@ header .Laptop {
   letter-spacing: 0.2px;
 }
 
-/* small glowing dot */
+
 .dot {
   width: 10px;
   height: 10px;
@@ -94,7 +94,7 @@ header .Laptop {
   flex: 0 0 10px;
 }
 
-/* center nav (keeps items compact) */
+
 .nav-list {
   display: flex;
   align-items: center;
@@ -104,7 +104,7 @@ header .Laptop {
   list-style: none;
 }
 
-/* nav links */
+
 .nav-list a {
   color: var(--muted);
   text-decoration: none;
@@ -115,7 +115,7 @@ header .Laptop {
   transition: color 180ms ease, transform 180ms ease;
 }
 
-/* subtle underline on hover */
+
 .nav-list a::after {
   content: "";
   position: absolute;
@@ -130,7 +130,7 @@ header .Laptop {
   border-radius: 2px;
 }
 
-/* hover behavior */
+
 .nav-list a:hover {
   color: var(--text);
   transform: translateY(-2px);
@@ -141,7 +141,7 @@ header .Laptop {
   background: linear-gradient(90deg, var(--accent), var(--primary));
 }
 
-/* small separator dot between items */
+
 .nav-list li+li::before {
   content: "•";
   color: rgba(255, 255, 255, 0.08);
@@ -151,14 +151,14 @@ header .Laptop {
   vertical-align: middle;
 }
 
-/* right side (avatar / buttons) */
+
 .right {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-/* avatar mini button */
+
 .hamburger,
 .btn {
   height: 40px;
@@ -173,7 +173,7 @@ header .Laptop {
   cursor: pointer;
 }
 
-/* special avatar look */
+
 .hamburger img {
   width: 34px;
   height: 34px;
@@ -183,14 +183,14 @@ header .Laptop {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6), inset 0 -6px 18px rgba(255, 255, 255, 0.02);
 }
 
-/* responsive: compact on small screens */
+
 @media (max-width: 920px) {
   .nav-list {
     gap: 14px;
   }
 }
 
-/* mobile: hide nav-list, show hamburger icon */
+
 @media (max-width: 768px) {
   .nav-list {
     display: none;
@@ -201,10 +201,9 @@ header .Laptop {
   }
 }
 
-/* ensure page content not hidden under fixed header */
+
 body {
   padding-top: 72px;
-  /* match header height */
 }
 
 
