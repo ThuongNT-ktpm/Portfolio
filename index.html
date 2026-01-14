@@ -4,397 +4,289 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Thuong-Dev — Portfolio</title>
-    <meta
-      name="description"
-      content="Portfolio cá nhân của Thuong — Software Engineer"
-    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800&family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
 
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/mobile.css" />
-    <link rel="stylesheet" href="css/styles-anime.css" />
-    <link rel="stylesheet" href="css/pixel.css" />
   </head>
   <body>
-    <!--  HEADER -->
-    <header>
-      <div class="Laptop">
-        <a href="#home" class="brand">
-          <span class="dot"></span> Tiến Thương Dev • Software Engineer
-        </a>
-
-        <!-- Menu laptop -->
-        <ul class="nav-list">
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#timeline">Timeline</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li>
-            <a href="https://thuongnt-ktpm.github.io/learn/" target="_blank"
-              >Study Materials</a
-            >
-          </li>
-        </ul>
-
-        <div class="right">
-          <button id="themeToggle" class="btn ghost" aria-label="Đổi theme">
-            👀
-          </button>
-
-          <button id="menuBtn" class="hamburger" aria-label="Mở menu">☰</button>
-        </div>
+    <header class="animate-scroll from-top">
+      <a href="#" class="logo">Tiến Thương</a>
+      <div class="header-right">
+        <div id="theme-toggle"><i class="fas fa-moon"></i></div>
+        <nav class="navbar">
+          <a href="#home" class="active">Home</a>
+          <a href="#projects">Project</a>
+          <a href="#skills">Skill</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#study">Study</a>
+        </nav>
+        <i class="fas fa-bars" id="menu-icon"></i>
       </div>
-
-      <!-- Menu  mobile -->
-      <nav id="mobileMenu" class="mobile">
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#timeline">Timeline</a>
-        <a href="#contact">Contact</a>
-        <a href="https://thuongnt-ktpm.github.io/learn/" target="_blank"
-          >Learn</a
-        >
-      </nav>
     </header>
 
-    <main class="wrap" id="home">
-      <section class="hero">
-        <div>
-          <div class="tag">Xin chào 👋 • I'm Thuong</div>
-          <h1 class="title">Cậu Dev Lỏ</h1>
-          <p class="subtitle">
-            Xin chào, mình là Thương — sinh viên Software Engineering.<br />
-            <br />
-
-            Nếu bạn muốn xem toàn bộ hiệu ứng của các project, hãy truy cập bằng
-            laptop hoặc máy tính bảng nhé. Một số project có thể không hiển thị
-            đúng trên điện thoại, bạn chỉ cần sao chép link và mở trên Google để
-            trải nghiệm tốt hơn.
-            <br />
-            Tất cả source code đều đã được public trên GitHub. Nếu bạn hứng thú,
-            có thể tải về tham khảo.
-            <br />
-            Và nếu bạn chưa quen với GitHub, cứ nhắn tin cho mình — mình sẽ hỗ
-            trợ miễn phí 💻
-            <br />
-            <b>
-              Mình có hỗ trợ làm hộ bài tập các môn chuyên ngành, sp ôn kiến
-              thức cho bạn nào bị mất gốc Java và HTML+CSS
-            </b>
-          </p>
-          <div class="cta">
-            <a class="btn primary" href="#projects">Xem dự án</a>
-            <a class="btn" href="#contact">Liên hệ</a>
-          </div>
-        </div>
-
-        <div class="avata1">
-          <img src="image/avata.jpg" alt="Anh " loading="lazy" />
-        </div>
-      </section>
-
-      <section id="projects">
-        <h2 style="margin-top: 28px">Projects</h2>
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-image">
-              <img src="image/gopqua.png" alt="Gopqua" />
-            </div>
-            <div class="project-content">
-              <p>Gift Project</p>
-              <ul>
-                <li>Role: full-task Developer</li>
-                <li>Technologies: HTML, CSS, JavaScript</li>
-              </ul>
-              <a
-                class="btn btn-view"
-                href="https://thuongnt-ktpm.github.io/Demo_hop_qua/"
-                target="_blank"
-                >View Project</a
-              >
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-image">
-              <img src="image/vutru.png" alt="galaxy" />
-            </div>
-            <div class="project-content">
-              <p>Galaxy Project</p>
-              <ul>
-                <li>Role: full-task Developer</li>
-                <li>Technologies: HTML, CSS, JavaScript</li>
-              </ul>
-              <a
-                class="btn btn-view"
-                href="https://thuongnt-ktpm.github.io/cclove/?key=mo-cua-tinh-cau&images=.%2Fimage%2F3.jpg%2C.%2Fimage%2F4.jpg%2C.%2Fimage%2F7.jpg%2C.%2Fimage%2F8.jpg%2C.%2Fimage%2F9.jpg%2C.%2Fimage%2F10.jpg%2C.%2Fimage%2F11.jpg%2C.%2Fimage%2F12.jpg%2C.%2Fimage%2F13.jpg%2C.%2Fimage%2F15.jpg%2C.%2Fimage%2F16.jpg%2C.%2Fimage%2F17.jpg%2C.%2Fimage%2F19.jpg%2C.%2Fimage%2F20.jpg%2C.%2Fimage%2F21.jpg"
-                target="_blank"
-                >View Project</a
-              >
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-image">
-              <img src="image/bailu.png" alt="bailu" />
-            </div>
-            <div class="project-content">
-              <p>Hẹ Hẹ</p>
-              <ul>
-                <li>Role: full-task Developer</li>
-                <li>Technologies: HTML, CSS, JavaScript</li>
-              </ul>
-              <a
-                class="btn btn-view"
-                href="https://thuongnt-ktpm.github.io/balu/"
-                target="_blank"
-                >View Project</a
-              >
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-image">
-              <img src="image/hsk.png" alt="hsk" />
-            </div>
-            <div class="project-content">
-              <p>HSK Test</p>
-              <ul>
-                <li>Role: full-task Developer</li>
-                <li>Technologies: HTML, CSS, Python, JavaScript</li>
-              </ul>
-              <a
-                class="btn btn-view"
-                href="https://thuongnt-ktpm.github.io/kkk/"
-                target="_blank"
-                >View Project</a
-              >
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-image">
-              <img src="image/sn.png" alt="sm" />
-            </div>
-            <div class="project-content">
-              <p>Happy birthday</p>
-              <ul>
-                <li>Role: full-task Developer</li>
-                <li>Technologies: HTML, CSS, JavaScript</li>
-              </ul>
-              <a
-                class="btn btn-view"
-                href="https://thuongnt-ktpm.github.io/smThu/"
-                target="_blank"
-                >View Project</a
-              >
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-image">
-              <img src="image/2010.png" alt="Phu nu" />
-            </div>
-            <div class="project-content">
-              <p>20-10</p>
-              <ul>
-                <li>Role: full-task Developer</li>
-                <li>Technologies: HTML, CSS, JavaScript</li>
-              </ul>
-              <a
-                class="btn btn-view"
-                href="https://thuongnt-ktpm.github.io/2010/"
-                target="_blank"
-                >View Project</a
-              >
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-image">
-              <img src="image/fa.png" alt="Phu nu" />
-            </div>
-            <div class="project-content">
-              <p>FA muôn năm</p>
-              <ul>
-                <li>Role: full-task Developer</li>
-                <li>Technologies: HTML, CSS, JavaScript</li>
-              </ul>
-              <a
-                class="btn btn-view"
-                href="https://thuongnt-ktpm.github.io/FA-muon-nam/"
-                target="_blank"
-                >View Project</a
-              >
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-image">
-              <img src="image/ba.png" alt="CV project" />
-            </div>
-            <div class="project-content">
-              <p>Hội Nghị Thượng Đỉnh</p>
-              <ul>
-                <li>Role: full-task Developer</li>
-                <li>Technologies: HTML, CSS</li>
-                <br />
-              </ul>
-              <a
-                class="btn btn-view"
-                href="https://thuongnt-ktpm.github.io/H-i-ngh-/"
-                target="_blank"
-                >View Project</a
-              >
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="Skills" id="skills">
-        <h2>My Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-              alt="HTML5"
-            />
-            <p>HTML5</p>
-          </div>
-          <div class="skill-card">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-              alt="CSS3"
-            />
-            <p>CSS</p>
-          </div>
-          <div class="skill-card">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-              alt="JS"
-            />
-            <p>JavaScript</p>
-          </div>
-          <div class="skill-card">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-              alt="GitHub"
-            />
-            <p>GitHub</p>
-          </div>
-          <div class="skill-card">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
-              alt="Java"
-            />
-            <p>Java</p>
-          </div>
-
-          <div class="skill-card">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-              alt="SQL"
-            />
-            <p>SQL</p>
-          </div>
-
-          <div class="skill-card">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
-              alt="C Language"
-            />
-            <p>C</p>
-          </div>
-
-          <div class="skill-card">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
-              alt="Bootstrap"
-            />
-            <p>Bootstrap</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="timeline">
-        <h2 style="margin-top: 28px">Timeline</h2>
-        <div class="timeline">
-          <div class="tl-item">
-            <h4>2025 — Student Software Engineering</h4>
-            <p>Mảng web, OOP, database...</p>
-          </div>
-          <div class="tl-item">
-            <h4>2024 — Student Software Engineering</h4>
-            <p>Làm part-time, học tiếng anh, làm quen với C</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact">
-        <h2 style="margin-top: 28px">Liên hệ</h2>
-        <form id="contactForm">
-          <input type="text" name="name" placeholder="Họ tên" required />
-          <input type="email" name="email" placeholder="Email" required />
-          <input type="text" name="subject" placeholder="Chủ đề" required />
-          <textarea name="message" placeholder="Nội dung" required></textarea>
-          <div
-            style="
-              grid-column: 1 / -1;
-              display: flex;
-              gap: 10px;
-              justify-content: flex-end;
-            "
-          >
-            <button type="submit" class="btn primary" id="btnAlert">Gửi</button>
-          </div>
-        </form>
-      </section>
-
-      <footer>
-        <div
-          style="
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-top: 18px;
-          "
+    <section id="home" class="unified-hero">
+      <div class="hero-text animate-scroll from-left">
+        <h3>Xin chào, tôi là</h3>
+        <h1>Cậu Dev Lỏ</h1>
+        <p class="bio">
+          Xin chào, mình là Thương — sinh viên Software Engineering.<br /><br />
+          Nếu bạn muốn xem toàn bộ hiệu ứng của các project, hãy truy cập bằng
+          laptop hoặc máy tính bảng nhé. Một số project có thể không hiển thị
+          đúng trên điện thoại.<br />
+          Tất cả source code đều đã được public trên GitHub. Nếu bạn hứng thú,
+          có thể tải về tham khảo.<br />
+          Và nếu bạn chưa quen với GitHub, cứ nhắn tin cho mình — mình sẽ hỗ trợ
+          miễn phí 💻<br />
+          <b>
+            Mình có hỗ trợ làm hộ bài tập các môn chuyên ngành, sp ôn kiến thức
+            cho bạn nào bị mất gốc Java và HTML+CSS
+          </b>
+        </p>
+        <a
+          href="#end"
+          class="study-btn"
+          style="padding: 10px 25px; font-size: 14px"
+          >Contact Me</a
         >
-          <div>
-            © <span id="year"></span> Thuong-Dev. All rights reserved 2024.
-          </div>
-          <div class="socials">
+      </div>
+      <div class="hero-img animate-scroll from-right">
+        <img src="image/avata.jpg" alt="Avatar" />
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="heading animate-scroll from-bottom">Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card animate-scroll from-left">
+          <img src="image/gopqua.png" alt="Gift Project" />
+          <div class="project-info">
+            <h4>Gift Project</h4>
+            <p>HTML, CSS, JavaScript</p>
             <a
-              class="chip"
-              href="https://github.com/thuongnt-ktpm"
+              href="https://thuongnt-ktpm.github.io/Demo_hop_qua/"
               target="_blank"
-              rel="noopener"
-              >GitHub</a
+              class="project-btn"
             >
-            <a
-              class="chip"
-              href="https://www.facebook.com/"
-              target="_blank"
-              rel="noopener"
-              >Facebook</a
-            >
-            <a class="chip" href="#home">↑ Top</a>
+              Xem chi tiết <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
 
-        <span>👀 Visitors: <strong id="visitor-count">...</strong></span>
-      </footer>
-    </main>
+        <div class="project-card animate-scroll from-right">
+          <img src="image/vutru.png" alt="Galaxy Project" />
+          <div class="project-info">
+            <h4>Galaxy Project</h4>
+            <p>HTML, CSS, JavaScript</p>
+            <a
+              href="https://thuongnt-ktpm.github.io/cclove/?key=mo-cua-tinh-cau&images=.%2Fimage%2F3.jpg%2C.%2Fimage%2F4.jpg%2C.%2Fimage%2F7.jpg%2C.%2Fimage%2F8.jpg%2C.%2Fimage%2F9.jpg%2C.%2Fimage%2F10.jpg%2C.%2Fimage%2F11.jpg%2C.%2Fimage%2F12.jpg%2C.%2Fimage%2F13.jpg%2C.%2Fimage%2F15.jpg%2C.%2Fimage%2F16.jpg%2C.%2Fimage%2F17.jpg%2C.%2Fimage%2F19.jpg%2C.%2Fimage%2F20.jpg%2C.%2Fimage%2F21.jpg"
+              target="_blank"
+              class="project-btn"
+            >
+              Xem chi tiết <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card animate-scroll from-left">
+          <img src="image/bailu.png" alt="Hẹ Hẹ" />
+          <div class="project-info">
+            <h4>Hẹ Hẹ</h4>
+            <p>HTML, CSS, JavaScript</p>
+            <a
+              href="https://thuongnt-ktpm.github.io/balu/"
+              target="_blank"
+              class="project-btn"
+            >
+              Xem chi tiết <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card animate-scroll from-right">
+          <img src="image/hsk.png" alt="HSK Test" />
+          <div class="project-info">
+            <h4>HSK Test</h4>
+            <p>HTML, CSS, JavaScript</p>
+            <a
+              href="https://thuongnt-ktpm.github.io/kkk/"
+              target="_blank"
+              class="project-btn"
+            >
+              Xem chi tiết <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card animate-scroll from-left">
+          <img src="image/sn.png" alt="Happy Birthday" />
+          <div class="project-info">
+            <h4>Happy Birthday</h4>
+            <p>HTML, CSS, JavaScript</p>
+            <a
+              href="https://thuongnt-ktpm.github.io/smThu/"
+              target="_blank"
+              class="project-btn"
+            >
+              Xem chi tiết <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card animate-scroll from-right">
+          <img src="image/2010.png" alt="20-10" />
+          <div class="project-info">
+            <h4>Dự án 20-10</h4>
+            <p>HTML, CSS, JavaScript</p>
+            <a
+              href="https://thuongnt-ktpm.github.io/2010/"
+              target="_blank"
+              class="project-btn"
+            >
+              Xem chi tiết <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card animate-scroll from-left">
+          <img src="image/fa.png" alt="FA Muôn Năm" />
+          <div class="project-info">
+            <h4>FA Muôn Năm</h4>
+            <p>HTML, CSS, JavaScript</p>
+            <a
+              href="https://thuongnt-ktpm.github.io/FA-muon-nam/"
+              target="_blank"
+              class="project-btn"
+            >
+              Xem chi tiết <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card animate-scroll from-right">
+          <img src="image/ba.png" alt="Hội Nghị" />
+          <div class="project-info">
+            <h4>Hội Nghị Thượng Đỉnh</h4>
+            <p>HTML, CSS, JavaScript</p>
+            <a
+              href="https://thuongnt-ktpm.github.io/H-i-ngh-/"
+              target="_blank"
+              class="project-btn"
+            >
+              Xem chi tiết <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="heading animate-scroll from-bottom">Technical Skills</h2>
+      <div class="skills-grid animate-scroll from-bottom">
+        <div class="skill-item">
+          <i class="devicon-html5-plain colored"></i><span>HTML5</span>
+        </div>
+        <div class="skill-item">
+          <i class="devicon-css3-plain colored"></i><span>CSS3</span>
+        </div>
+        <div class="skill-item">
+          <i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span>
+        </div>
+
+        <div class="skill-item">
+          <i class="devicon-java-plain colored"></i>
+          <span>Java</span>
+        </div>
+
+        <div class="skill-item">
+          <i class="devicon-spring-original colored"></i
+          ><span>Spring Boot</span>
+        </div>
+        <div class="skill-item">
+          <i class="fas fa-server" style="color: #007bff"></i
+          ><span>Servlet</span>
+        </div>
+        <div class="skill-item">
+          <i class="devicon-mysql-plain colored"></i><span>MySQL</span>
+        </div>
+        <div class="skill-item">
+          <i class="devicon-github-original"></i><span>GitHub</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline">
+      <h2 class="heading animate-scroll from-bottom">Timeline</h2>
+      <div class="timeline-container">
+        <div class="timeline-item animate-scroll from-left">
+          <span class="time-stamp">2025 - Nay</span>
+          <div class="timeline-content">
+            <h3>Sinh viên CNTT</h3>
+            <p>Định hướng Backend Engineer</p>
+          </div>
+        </div>
+        <div class="timeline-item animate-scroll from-right">
+          <span class="time-stamp">2024 - 2025</span>
+          <div class="timeline-content">
+            <h3>Sinh viên CNTT</h3>
+            <p>Học Web, OOP, Database, Java</p>
+          </div>
+        </div>
+        <div class="timeline-item animate-scroll from-left">
+          <span class="time-stamp">2023 - 2024</span>
+          <div class="timeline-content">
+            <h3>Sinh viên năm nhất</h3>
+            <p>Làm part-time, làm quen với C/C++</p>
+          </div>
+        </div>
+        <div class="timeline-item animate-scroll from-right">
+          <span class="time-stamp">2023 về trước</span>
+          <div class="timeline-content">
+            <h3>Tốt Nghiệp Cấp III</h3>
+            <p>Học sinh THPT Trần Văn Thời</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="study">
+      <div class="study-banner animate-scroll from-bottom">
+        <h2>Study Materials</h2>
+        <p>Kho tài liệu trong quá trình học đại học</p>
+        <a
+          href="https://thuongnt-ktpm.github.io/learn/"
+          target="_blank"
+          class="study-btn"
+        >
+          Truy cập ngay
+          <i class="fas fa-external-link-alt" style="margin-left: 10px"></i>
+        </a>
+      </div>
+    </section>
+
+    <footer class="animate-scroll from-bottom" id="end">
+      <div class="social-icons">
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+      </div>
+      <p style="margin-top: 15px">© 2024 Nguyen Tien Thuong. Thanks.</p>
+    </footer>
 
     <script src="js/code.js"></script>
   </body>
