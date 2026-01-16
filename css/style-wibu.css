@@ -1,0 +1,546 @@
+/* ==========================================================================
+   1. GLOBAL RESET & FONT
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+    /* Màu sắc chủ đạo: Tím than & Xanh Neon */
+    --bg-dark: #0a0b10;
+    --bg-card: #14161f;
+    --primary: #00f0ff;
+    /* Cyan Neon */
+    --secondary: #7000ff;
+    /* Purple Neon */
+    --text-main: #e0e6ed;
+    --text-muted: #94a3b8;
+    --border-glow: 0 0 10px rgba(0, 240, 255, 0.3);
+
+    --font-tech: 'Orbitron', sans-serif;
+    /* Font tiêu đề robot */
+    --font-read: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-read);
+    line-height: 1.6;
+    /* Hiệu ứng nền lưới Cyberpunk */
+    background-image:
+        linear-gradient(rgba(112, 0, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(112, 0, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Scrollbar đẹp */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVBAR (Đã Fix lỗi hiển thị)
+   ========================================================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: rgba(10, 11, 16, 0.95);
+    /* Nền tối đậm, gần như không xuyên thấu */
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    z-index: 1000;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-family: var(--font-tech);
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--primary);
+}
+
+/* Navbar hiển thị mặc định trên Desktop */
+.navbar {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar a {
+    font-family: var(--font-tech);
+    font-size: 0.9rem;
+    color: var(--text-main);
+    text-transform: uppercase;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Hiệu ứng gạch chân neon */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: 0.3s;
+    box-shadow: 0 0 8px var(--primary);
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
+}
+
+.navbar a:hover {
+    color: var(--primary);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#theme-toggle {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+#menu-icon {
+    font-size: 1.8rem;
+    color: var(--text-main);
+    display: none;
+    /* Ẩn trên desktop */
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
+.unified-hero {
+    min-height: 100vh;
+    padding: 100px 10% 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h3 {
+    color: var(--secondary);
+    font-family: var(--font-tech);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #fff, var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 5px rgba(0, 240, 255, 0.5));
+}
+
+.hero-text .bio {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-left: 4px solid var(--primary);
+    border-radius: 0 10px 10px 0;
+}
+
+.study-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--secondary);
+    color: white;
+    font-family: var(--font-tech);
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 0 15px var(--secondary);
+    transition: 0.3s;
+}
+
+.study-btn:hover {
+    background: var(--primary);
+    box-shadow: 0 0 20px var(--primary);
+    transform: translateY(-2px);
+    color: #000;
+}
+
+.hero-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-img img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+    z-index: 2;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Vòng tròn công nghệ xoay quanh avatar */
+.hero-img::before {
+    content: '';
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    border: 2px dashed var(--secondary);
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* ==========================================================================
+   4. PROJECTS GRID (Đã Fix: Gọn gàng, Không rối)
+   ========================================================================== */
+section {
+    padding: 80px 10%;
+}
+
+.heading {
+    text-align: center;
+    font-family: var(--font-tech);
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px var(--primary);
+}
+
+.projects-grid {
+    display: grid;
+    /* Tự động chia cột, tối thiểu 300px */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    /* Cố định chiều cao để đều nhau */
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+    position: relative;
+}
+
+.project-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 55%;
+    /* Ảnh chiếm 55% chiều cao */
+    object-fit: cover;
+    /* Đảm bảo ảnh không bị méo */
+    border-bottom: 2px solid var(--secondary);
+}
+
+.project-info {
+    padding: 20px;
+    height: 45%;
+    /* Phần chữ chiếm 45% còn lại */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--bg-card);
+    /* Nền đặc, không trong suốt để dễ đọc chữ */
+}
+
+.project-info h4 {
+    color: var(--primary);
+    font-family: var(--font-tech);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    /* Giới hạn số dòng mô tả để không bị tràn */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.project-btn {
+    margin-top: auto;
+    /* Đẩy nút xuống dưới cùng */
+    align-self: flex-start;
+    font-size: 0.9rem;
+    color: var(--secondary);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.project-btn:hover {
+    color: var(--primary);
+    padding-left: 5px;
+    /* Hiệu ứng di chuyển nhẹ */
+}
+
+/* ==========================================================================
+   5. SKILLS SECTION
+   ========================================================================== */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--secondary);
+    padding: 15px 30px;
+    border-radius: 50px;
+    /* Bo tròn kiểu viên thuốc */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s;
+    cursor: default;
+}
+
+.skill-item:hover {
+    background: var(--secondary);
+    box-shadow: 0 0 20px var(--secondary);
+    transform: scale(1.05);
+}
+
+.skill-item span {
+    font-weight: bold;
+    color: white;
+}
+
+.skill-item i {
+    font-size: 1.5rem;
+}
+
+/* ==========================================================================
+   6. TIMELINE (Style Dọc đơn giản)
+   ========================================================================== */
+.timeline-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-left: 3px solid var(--secondary);
+    /* Đường kẻ bên trái */
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* Chấm tròn */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -39px;
+    /* Căn chỉnh chấm tròn vào đúng đường kẻ */
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background: var(--bg-dark);
+    border: 3px solid var(--primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.timeline-content:hover {
+    border-color: var(--primary);
+    background: rgba(0, 240, 255, 0.05);
+}
+
+.time-stamp {
+    display: block;
+    color: var(--primary);
+    font-weight: bold;
+    font-family: var(--font-tech);
+    margin-bottom: 5px;
+}
+
+/* ==========================================================================
+   7. STUDY & FOOTER
+   ========================================================================== */
+.study-banner {
+    text-align: center;
+    background: linear-gradient(45deg, rgba(112, 0, 255, 0.2), rgba(0, 240, 255, 0.2));
+    padding: 60px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: #050508;
+}
+
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border: 2px solid var(--text-muted);
+    border-radius: 50%;
+    margin: 0 10px;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+}
+
+.social-link:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    box-shadow: 0 0 15px var(--primary);
+    transform: translateY(-5px);
+}
+
+/* ==========================================================================
+   8. RESPONSIVE (Mobile)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        padding: 0 20px;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    /* Hiện nút menu */
+
+    .navbar {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 11, 16, 0.98);
+        border-bottom: 2px solid var(--primary);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 20px;
+        /* Logic ẩn hiện: Mặc định ẩn, hiện khi có class active (cần JS) */
+        /* Nếu bạn chưa có JS toggle, hãy tạm thời để display: flex nhưng coi chừng che màn hình */
+        display: none;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    /* Class này JS sẽ thêm vào */
+
+    .unified-hero {
+        flex-direction: column-reverse;
+        padding-top: 120px;
+        text-align: center;
+    }
+
+    .hero-img img,
+    .hero-img::before {
+        width: 280px;
+        height: 280px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        /* Mobile hiển thị 1 cột */
+    }
+}

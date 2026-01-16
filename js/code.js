@@ -1,24 +1,70 @@
 // 1. Theme Logic (Chế độ Sáng/Tối)
-const themeToggle = document.getElementById("theme-toggle");
-const themeIcon = themeToggle.querySelector("i");
-const body = document.body;
+document.addEventListener("DOMContentLoaded", function () {
+  // 1. Khai báo danh sách các file CSS giao diện
+  const themes = [
+    "css/styles.css",
+    "css/style-wibu.css",
+    "css/pixel.css",
+    "css/cute.css",
+  ];
 
-// Kiểm tra trạng thái đã lưu
-if (localStorage.getItem("theme") === "dark") {
-  body.classList.add("dark-mode");
-  themeIcon.classList.replace("fa-moon", "fa-sun");
-}
+  // 2. Lấy các phần tử cần thiết
+  const themeToggleBtn = document.getElementById("theme-toggle");
+  const themeLink = document.getElementById("theme-link");
+  const icon = themeToggleBtn.querySelector("i");
 
-// Xử lý sự kiện click
-themeToggle.addEventListener("click", () => {
-  body.classList.toggle("dark-mode");
-  if (body.classList.contains("dark-mode")) {
-    themeIcon.classList.replace("fa-moon", "fa-sun");
-    localStorage.setItem("theme", "dark");
-  } else {
-    themeIcon.classList.replace("fa-sun", "fa-moon");
-    localStorage.setItem("theme", "light");
+  let currentThemeIndex = localStorage.getItem("savedThemeIndex")
+    ? parseInt(localStorage.getItem("savedThemeIndex"))
+    : 0;
+
+  function applyTheme(index) {
+    themeLink.href = themes[index];
+
+    if (index === 0) {
+      // Mặc định
+      icon.className = "fas fa-moon";
+    } else if (index === 1) {
+      // Wibu
+      icon.className = "fas fa-robot";
+    } else if (index === 2) {
+      // Retro
+      icon.className = "fas fa-newspaper";
+    } else if (index === 3) {
+      // Cute
+      icon.className = "fas fa-heart";
+    }
+
+    localStorage.setItem("savedThemeIndex", index);
   }
+
+  applyTheme(currentThemeIndex);
+
+  themeToggleBtn.addEventListener("click", function () {
+    currentThemeIndex++;
+
+    if (currentThemeIndex >= themes.length) {
+      currentThemeIndex = 0;
+    }
+
+    applyTheme(currentThemeIndex);
+  });
+
+  const menuIcon = document.getElementById("menu-icon");
+  const navbar = document.querySelector(".navbar");
+
+  if (menuIcon) {
+    menuIcon.onclick = () => {
+      menuIcon.classList.toggle("fa-times"); // Đổi icon thành dấu X
+      navbar.classList.toggle("active");
+    };
+  }
+
+  window.onscroll = () => {
+    if (menuIcon) {
+      menuIcon.classList.remove("fa-times");
+      navbar.classList.remove("active");
+    }
+  };
 });
 
 // 2. Mobile Menu Logic
@@ -30,7 +76,6 @@ menuIcon.onclick = () => {
   navbar.classList.toggle("active");
 };
 
-// Đóng menu khi click vào link
 document.querySelectorAll(".navbar a").forEach((n) =>
   n.addEventListener("click", () => {
     menuIcon.classList.remove("fa-times");
@@ -43,19 +88,18 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("active"); // Kích hoạt animation khi lướt tới
+        entry.target.classList.add("active");
       }
     });
   },
   { threshold: 0.1 }
-); // Hiển thị 10% là chạy
+);
 
 // Quét tất cả các phần tử có class animate-scroll
 document
   .querySelectorAll(".animate-scroll")
   .forEach((el) => observer.observe(el));
 
-// 4. Force check on load (Chạy ngay lập tức cho phần Header và Home)
 window.onload = function () {
   document.querySelectorAll(".animate-scroll").forEach((el) => {
     if (el.getBoundingClientRect().top < window.innerHeight) {

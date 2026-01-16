@@ -31,7 +31,7 @@ body.dark-mode {
   scroll-behavior: smooth;
 }
 
-/* Base Font: Poppins cho nội dung thường */
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--bg-color);
@@ -75,7 +75,7 @@ header {
 }
 
 .logo {
-  /* Font mới cho tên: Montserrat dày và đẹp */
+
   font-family: 'Montserrat', sans-serif;
   font-size: 22px;
   font-weight: 800;
@@ -123,7 +123,7 @@ section {
 }
 
 .heading {
-  /* Font mới cho tiêu đề section */
+
   font-family: 'Montserrat', sans-serif;
   font-size: 32px;
   margin-bottom: 40px;
@@ -157,7 +157,7 @@ section {
 }
 
 .hero-text h1 {
-  /* Font mới cho tên chính "Cậu Dev Lỏ" */
+
   font-family: 'Montserrat', sans-serif;
   font-size: 48px;
   font-weight: 800;
