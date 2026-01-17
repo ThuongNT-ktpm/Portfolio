@@ -2,10 +2,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   // 1. Khai báo danh sách các file CSS giao diện
   const themes = [
+    "css/cute.css",
     "css/styles.css",
     "css/style-wibu.css",
     "css/pixel.css",
-    "css/cute.css",
   ];
 
   // 2. Lấy các phần tử cần thiết
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (menuIcon) {
     menuIcon.onclick = () => {
-      menuIcon.classList.toggle("fa-times"); // Đổi icon thành dấu X
+      menuIcon.classList.toggle("fa-times");
       navbar.classList.toggle("active");
     };
   }
@@ -83,7 +83,6 @@ document.querySelectorAll(".navbar a").forEach((n) =>
   })
 );
 
-// 3. ANIMATION LOGIC (Intersection Observer)
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -95,7 +94,6 @@ const observer = new IntersectionObserver(
   { threshold: 0.1 }
 );
 
-// Quét tất cả các phần tử có class animate-scroll
 document
   .querySelectorAll(".animate-scroll")
   .forEach((el) => observer.observe(el));
@@ -106,4 +104,18 @@ window.onload = function () {
       el.classList.add("active");
     }
   });
+};
+
+document.addEventListener("contextmenu", (event) => event.preventDefault());
+
+document.onkeydown = function (e) {
+  if (
+    e.keyCode == 123 ||
+    (e.ctrlKey &&
+      e.shiftKey &&
+      (e.keyCode == "I".charCodeAt(0) || e.keyCode == "J".charCodeAt(0))) ||
+    (e.ctrlKey && e.keyCode == "U".charCodeAt(0))
+  ) {
+    return false;
+  }
 };
