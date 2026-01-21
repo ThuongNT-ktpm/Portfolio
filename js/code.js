@@ -80,7 +80,7 @@ document.querySelectorAll(".navbar a").forEach((n) =>
   n.addEventListener("click", () => {
     menuIcon.classList.remove("fa-times");
     navbar.classList.remove("active");
-  })
+  }),
 );
 
 const observer = new IntersectionObserver(
@@ -91,7 +91,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.1 }
+  { threshold: 0.1 },
 );
 
 document
@@ -119,3 +119,26 @@ document.onkeydown = function (e) {
     return false;
   }
 };
+
+// ---  MUSIC PLAYER ---
+document.addEventListener("DOMContentLoaded", function () {
+  const widget = document.getElementById("musicWidget");
+  const playBtn = document.getElementById("playBtn");
+  const audio = document.getElementById("audioPlayer");
+
+  if (playBtn && audio) {
+    playBtn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        widget.classList.add("playing");
+      } else {
+        audio.pause();
+        widget.classList.remove("playing");
+      }
+    });
+
+    audio.addEventListener("ended", () => {
+      widget.classList.remove("playing");
+    });
+  }
+});

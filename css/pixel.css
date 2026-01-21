@@ -521,3 +521,124 @@ footer {
         left: 8px !important;
     }
 }
+
+/* === CSS CHO MUSIC WIDGET === */
+.music-widget {
+    background: #2a2a2a;
+    border-radius: 20px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 420px;
+    /* Giới hạn chiều rộng */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin-bottom: 25px;
+    /* Tạo khoảng cách với tiêu đề bên dưới */
+    box-sizing: border-box;
+}
+
+.album-wrapper {
+    width: 80px;
+    /* Thu nhỏ lại chút cho hợp với Portfolio */
+    height: 80px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.info {
+    flex-grow: 1;
+    padding-right: 10px;
+    overflow: hidden;
+    /* Tránh vỡ khung nếu tên quá dài */
+}
+
+.music-widget .tag {
+    font-size: 9px;
+    font-weight: 700;
+    color: #bbb;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.music-widget .title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0 0 4px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.music-widget .artist {
+    font-size: 11px;
+    color: #aaa;
+    margin: 0;
+}
+
+.play-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+}
+
+.play-btn:hover {
+    transform: scale(1.05);
+}
+
+.play-btn:active {
+    transform: scale(0.95);
+}
+
+/* Icon Play */
+.icon-play {
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 10px solid #222;
+    margin-left: 3px;
+}
+
+/* Icon Pause */
+.icon-pause {
+    width: 10px;
+    height: 12px;
+    border-left: 3px solid #222;
+    border-right: 3px solid #222;
+    display: none;
+}
+
+/* Khi đang phát nhạc */
+.music-widget.playing .icon-play {
+    display: none;
+}
+
+.music-widget.playing .icon-pause {
+    display: block;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+    .music-widget {
+        max-width: 100%;
+        /* Full màn hình trên điện thoại */
+        margin-top: 20px;
+    }
+}
